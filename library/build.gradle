@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.library'
+    id 'com.vanniktech.maven.publish'
 }
 
 android {
@@ -16,8 +17,8 @@ android {
     defaultConfig {
         minSdkVersion 24
         targetSdkVersion 33
-        versionCode 1
-        versionName '1.0.0'
+        versionCode Integer.valueOf(project.findProperty("VERSION_CODE"))
+        versionName project.findProperty("VERSION_NAME")
         consumerProguardFiles 'proguard-rules.pro'
 		
 		externalNativeBuild {
